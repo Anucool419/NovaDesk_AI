@@ -1,0 +1,124 @@
+[{
+    "id":"factoid_1",
+    "bucket":"1_direct_factoid",
+    "question":"What are the standard check-in and check-out times?",
+    "ground_truth":"The standard check-in time is 3:00 PM and the standard check out time is 11 AM."
+
+},
+{
+    "id":"factoid_2",
+    "bucket":"1_direct_factoid",
+    "question":"What are the swimming pool timings?",
+    "ground_truth":"The swimming pool timings are 6:00 AM to 10:00 PM."
+},
+{
+    "id":"factoid_3",
+    "bucket":"1_direct_factoid",
+    "question":"What is the pet policy in the hotel?",
+    "ground_truth":"Pets are welcome in designated pet-friendly rooms for an additional fee of $50 per stay. A maximum of two pets is permitted per room.Guests must disclose pets at the time of booking or check-in. Pets must be supervised and must not be left unattended in guest rooms or public areas. If a pet is found unattended, the registered guest may be charged a $100 supervision violation fee, regardless of whether the pet has caused inconvenience, damage or disturbance."
+},
+{
+    "id":"factoid_4",
+    "bucket":"1_direct_factoid",
+    "question":"Will Wifi be provided by the hotel?",
+    "ground_truth":"Complimentary Wi-Fi is available to registered guests in guest rooms and common areas. Network performance may vary depending on usage, location and service availability."
+},
+{
+    "id":"factoid_5",
+    "bucket":"1_direct_factoid",
+    "question":"Are visitors allowed in the hotel?",
+    "ground_truth":"Visitors are allowed in the hotel. Registered guests are responsible for visitors they invite onto the property. Visitors may be required to register with the front desk and may be subject to identification requirements."
+},
+{
+    "id":"noisy_1",
+    "bucket":"2_noisy_convo",
+    "question":"I had a super long flight and my conference tomorrow doesn't start until the afternoon, so I really want to sleep in past noon before packing my bags. Will I get charged extra for leaving my room late?",
+    "ground_truth":"Standard check-out is at 11:00 AM. Late check-out past 11:00 AM is subject to room availability and may incur an additional late check-out fee."
+},
+{
+    "id":"noisy_2",
+    "bucket":"2_noisy_convo",
+    "question":"I was hospitalized last year after accidentally eating shrimp at a buffet, so I'm really nervous about ordering dinner to my room tonight. How do you guys make sure my food is safe?",
+    "ground_truth":"Guests with severe food allergies or dietary restrictions should notify the hotel or front desk when ordering so the kitchen can take strict precautions against cross-contamination."
+},
+{
+    "id":"noisy_3",
+    "bucket":"2_noisy_convo",
+    "question":"Me and my husband are celebrating our anniversary and bringing our golden retriever Max along for the weekend trip. How much extra money do we have to put down at the front desk for bringing him?",
+    "ground_truth":"Guests traveling with a pet must pay an additional deposit of $50 upon check-in."
+},
+{
+    "id":"noisy_4",
+    "bucket":"2_noisy_convo",
+    "question":"I had left the restaurant at around 12 PM and returned to my room. At 1 i realized I don't have my phone with me. I am sure I took it with me to the restaurant but when I rushed back I didn't find it there. Who should I contact?",
+    "ground_truth":"Items found on hotel premises are handled according to the property's lost-and-found procedures. Guests should contact the front desk as soon as possible to report a missing item.The hotel may retain unclaimed items for a limited period before disposal or donation, subject to local requirements"
+},
+{
+    "id":"noisy_5",
+    "bucket":"2_noisy_convo",
+    "question":"A group of people are constantly making noise outside my room. It is 10 PM. I have had a tiring day and I am trying to get some sleep.",
+    "ground_truth":"According to our hotel policy, Quiet hours are observed from 10:00 PM to 7:00 AM. Guests are expected to keep noise at a level that does not disturb other guests. We will look into the matter immediately. Kindly provide any other information about the people making noise like their room number or the location from which this noise is coming."
+},
+{
+    "id": "vocab_01",
+    "bucket": "3_vocab_mismatch",
+    "question": "Can I get my money back if I call off my trip the morning I'm supposed to arrive?",
+    "ground_truth": "Reservations must be cancelled at least 24 hours prior to the scheduled check-in date to receive a full refund;  Cancellations made within 24 hours of arrival may be charged the equivalent of one night's stay plus applicable taxes.Advance-purchase, promotional and non-refundable rates may have different cancellation conditions, which will be displayed at the time of booking."
+},
+{
+    "id": "vocab_02",
+    "bucket": "3_vocab_mismatch",
+    "question": "Is there anywhere on the property to take a dip in water at 2 AM?",
+    "ground_truth": "No, the hotel pool is open from 6:00 AM to 10:00 PM only."
+},
+{
+    "id": "vocab_03",
+    "bucket": "3_vocab_mismatch",
+    "question": "How much is the fine if I puff on my vape pen inside my bedroom?",
+    "ground_truth": "All guest rooms and indoor public areas are non-smoking and non-vaping areas. Smoking or vaping is permitted only in designated outdoor areas. A cleaning and restoration fee of $250 may be charged when smoking or vaping occurs in a non-smoking room."
+},
+{
+    "id": "vocab_04",
+    "bucket": "3_vocab_mismatch",
+    "question": "Am I allowed to light some scented tea lights and use a portable induction burner to make ramen in my suite?",
+    "ground_truth": "No. Candles, open flames and unauthorized cooking appliances are not permitted in guest rooms under the hotel's safety, security and emergency procedures."
+},
+{
+    "id": "vocab_05",
+    "bucket": "3_vocab_mismatch",
+    "question": "If my car gets keyed or my laptop is stolen out of the trunk while parked in your lot, will the hotel reimburse me?",
+    "ground_truth": "No, the hotel is not responsible for theft, loss or damage to vehicles or their contents except where required by applicable law."
+},
+{
+    "id": "multi_01",
+    "bucket": "4_multi_constraint",
+    "question": "Can I leave my dog unattended in the room while I go to the spa at midnight, and what are the rules on pet supervision?",
+    "ground_truth": "While the spa is open 24/7, hotel pet policy requires pets to be supervised or properly crated in designated pet-friendly rooms according to hotel guidelines and not disturb other guests.Pets must be supervised and must not be left unattended in guest rooms or public areas. If a pet is found unattended, the registered guest may be charged a $100 supervision violation fee, regardless of whether the pet has caused inconvenience, damage or disturbance. Additional charges may apply for damage,excessive cleaning or other violations."
+},
+{
+    "id": "multi_02",
+    "bucket": "4_multi_constraint",
+    "question": "If I arrive at 1:00 PM on my check-in day and want to use the pool right away, which of those can I do?",
+    "ground_truth": "At 1:00 PM, standard room check-in (3:00 PM) is not yet open, though the pool is open from 6:00 AM to 10:00 PM."
+},
+{
+    "id": "multi_03",
+    "bucket": "4_multi_constraint",
+    "question": "I am not sure what the parking policy of the hotel is. I also wanted to understand how to make payments incase of any violations.",
+    "ground_truth": "The hotel provides designated parking spots for their registered guests, subject to capacity and applicable fees.Parking does not guarantee a reserved space unless explicitly confirmed. For any violations,  deposit may be placed on the payment card. The release of an authorization is subject to the card issuer's processing times."
+},
+{
+    "id": "multi_04",
+    "bucket": "4_multi_constraint",
+    "question": "Can I go out for a smoke while my room can be cleaned by the housekeeping?",
+    "ground_truth": "Yes you can go for a smoke in designated outdoor areas for smoking. If found smoking in non-smoking rooms a fee of $250 will be charged. Daily housekeeping is generally provided during the hotel's designated housekeeping hours. Guests can request for housekeeping at a specific time as well."
+},
+{
+    "id": "multi_05",
+    "bucket": "4_multi_constraint",
+    "question": "Does the hotel retain my personal details and my pet's name forever after I check out, or what is the privacy policy?",
+    "ground_truth": "Yes, the hotel does retain some the personal details provided along with your preferences. This is to make your experience better the next time you arrive. We assure you that the hotel prioritizes guest privacy and confidentiality regarding personal and stay records in accordance with its data retention and guest privacy guidelines."
+}
+
+
+]

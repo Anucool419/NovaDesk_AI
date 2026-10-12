@@ -1,0 +1,236 @@
+body{
+    background:linear-gradient(
+        180deg,
+        #d9f4ff 0%,
+        #b8e7ff 50%,
+        #e9f9ff 100%
+    );
+    /* color: #163247 !important; */
+}
+/*------HEADER-------*/
+header{
+    background: transparent !important;
+}
+
+/*---- MAIN CHAT AREA----*/
+#root{
+    padding-left: 260px;
+    padding-right: 260px;
+    /*color: #163247 !important;*/
+}
+
+/* Center Markdown headings used by the welcome message. */
+#root h1,
+#root h3 {
+    text-align: center;
+}
+
+/* Logo image */
+img[alt="logo"] {
+    display: block !important;
+    align-self: center;
+    width: 140px !important;
+    height: 140px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    border-radius: 50% !important;
+
+    margin: 80px auto 16px !important;
+
+    /* Your custom circular background */
+    
+    
+    padding: 12px !important;
+
+    border: 4px solid white !important;
+
+    box-shadow:
+        0 8px 30px rgba(0, 80, 120, 0.25) !important;
+}
+
+div:has(img[alt="logo"]) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+div:has(img[alt="logo"]) p,
+div:has(img[alt="logo"]) h1,
+div:has(img[alt="logo"]) h2,
+div:has(img[alt="logo"]) h3,
+div:has(img[alt="logo"]) h4,
+div:has(img[alt="logo"]) strong,
+div:has(img[alt="logo"]) em,
+div:has(img[alt="logo"]) li {
+    color: #163247 !important;
+}
+
+/* =========================================
+   ASSISTANT / APP RESPONSES
+   ========================================= */
+
+[data-step-type="assistant_message"] .message-content,
+[data-step-type="assistant_message"] .message-content p,
+[data-step-type="assistant_message"] .message-content li,
+[data-step-type="assistant_message"] .message-content strong,
+[data-step-type="assistant_message"] .message-content em,
+[data-step-type="assistant_message"] .message-content h1,
+[data-step-type="assistant_message"] .message-content h2,
+[data-step-type="assistant_message"] .message-content h3,
+[data-step-type="assistant_message"] .message-content h4 {
+    color: #163247 !important;
+}
+
+
+/* =========================================
+   USER MESSAGES
+   ========================================= */
+
+[data-step-type="user_message"] .message-content,
+[data-step-type="user_message"] .message-content p,
+[data-step-type="user_message"] .message-content li,
+[data-step-type="user_message"] .message-content strong,
+[data-step-type="user_message"] .message-content em,
+[data-step-type="user_message"] .message-content h1,
+[data-step-type="user_message"] .message-content h2,
+[data-step-type="user_message"] .message-content h3,
+[data-step-type="user_message"] .message-content h4 {
+    color: white !important;
+}
+
+
+/* =========================================
+   USER MESSAGE BUBBLE
+   ========================================= */
+
+/* Keep Chainlit's existing bubble/background styling */
+[data-step-type="user_message"] .bg-accent {
+    color: white !important;
+}
+
+
+@keyframes fadeUpLeft {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(-4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(-4deg);
+    }
+}
+
+@keyframes fadeUpRight {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(4deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(4deg);
+    }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    left: 40px;
+    top: 160px;
+    width: 220px;
+    height: 800px;
+
+    background-image:
+        url("/public/room1.jpg"),
+        url("/public/rest1.jpg"),
+        url("/public/spa1.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size:
+        220px 145px,
+        220px 145px,
+        220px 145px;
+
+    background-position:
+        center 0,
+        center 50%,
+        center 100%;
+
+    z-index: 10;
+    pointer-events: none;
+
+    animation: fadeUpLeft 1.2s ease forwards;
+}
+
+
+body::after {
+    content: "";
+    position: fixed;
+    right: 40px;
+    top: 160px;
+    width: 220px;
+    height: 800px;
+
+    background-image:
+        url("/public/pool1.jpg"),
+        url("/public/suite1.jpg"),
+        url("/public/beach.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size:
+        220px 145px,
+        220px 145px,
+        220px 145px;
+
+    background-position:
+        center 0,
+        center 50%,
+        center 100%;
+
+    z-index: 10;
+    pointer-events: none;
+
+    animation: fadeUpRight 1.2s ease forwards;
+}
+
+.main{
+    /* background:rgba(180,220,225,0.35);
+    backdrop-filter: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15); */
+    background:linear-gradient(
+        180deg,
+        #d9f4ff 0%,
+        #b8e7ff 50%,
+        #e9f9ff 100%
+    );
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.15) !important;
+
+}
+img[alt="room-image"] {
+    transform: rotate(-6deg) !important;
+    border: 4px solid white !important;
+}
+
+img[alt="restaurant-image"] {
+    transform: rotate(5deg) !important;
+    border: 4px solid white !important;
+}
+
+img[alt="spa-image"] {
+    transform: rotate(-4deg) !important;
+    border: 4px solid white !important;
+}

@@ -1,0 +1,20 @@
+fastapi
+uvicorn
+langchain
+langgraph
+langchain-openai
+sqlalchemy
+pydantic
+pydantic[email]
+faiss-cpu
+langchain-community
+python-dotenv
+pypdf
+pandas # for retrieval comparison table
+tabulate # for table
+# For authentication 
+python-jose[cryptography] 
+passlib[bcrypt] 
+argon2_cffi
+python-multipart
+chainlit

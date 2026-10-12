@@ -1,0 +1,6 @@
+.env
+__pycache__/
+reports/
+eval-ragas/
+virt/
+note.txt

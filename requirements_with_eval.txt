@@ -1,0 +1,37 @@
+fastapi
+uvicorn
+langchain
+langgraph
+langchain-openai
+langchain-groq
+sqlalchemy
+pydantic
+streamlit
+pydantic[email]
+faiss-cpu
+langchain-community
+python-dotenv
+pypdf
+pandas # for retrieval comparison table
+tabulate # for table
+# For authentication 
+python-jose[cryptography] 
+passlib[bcrypt] 
+argon2_cffi
+python-multipart
+chainlit
+
+
+#Inside new eval-ragas env:
+"ragas==0.4.3" 
+"langchain-core==0.3.86"
+"langchain-community==0.3.27"
+"langchain-openai==0.3.35"
+"langchain==0.3.30"
+"langgraph==0.3.34" 
+"pandas" 
+"datasets" 
+"faiss-cpu" 
+"python-dotenv" 
+"pypdf" 
+"openai"
