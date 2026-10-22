@@ -1,8 +1,9 @@
 #!/bin/bash
+# 1. Activate Azure's virtual environment
+source /tmp/*df28*/antenv/bin/activate 2>/dev/null || source antenv/bin/activate 2>/dev/null
 
-# 1. Start FastAPI in the background on port 8000
-# Replace 'main:app' with your actual FastAPI filename and app instance
-uvicorn fast.main:app --host 127.0.0.1 --port 8000 &
+# 2. Run FastAPI in the background on port 8000
+(cd fast && python -m uvicorn main:app --host 127.0.0.1 --port 8000) &
 
-# 2. Start Chainlit in the foreground on port 8001
-chainlit run app.py --host 0.0.0.0 --port 8001 --headless
+# 3. Run Chainlit in the foreground on port 8080 (the public-facing port)
+python -m chainlit run app.py --host 0.0.0.0 --port 8080
