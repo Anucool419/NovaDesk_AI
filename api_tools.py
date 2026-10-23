@@ -3,7 +3,7 @@ import requests
 from langchain_core.tools import tool
 
 # This is the URL where your local FastAPI server is running
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "http://127.0.0.1:8001"
 from datetime import date
 
 @tool
