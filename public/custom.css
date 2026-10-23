@@ -3,7 +3,7 @@ body{
         180deg,
         #d9f4ff 0%,
         #b8e7ff 50%,
-        #e9f9ff 100%
+        #e9f9ff 100% !important;
     );
     /* color: #163247 !important; */
 }
@@ -149,9 +149,9 @@ body::before {
     height: 800px;
 
     background-image:
-        url("/public/room1.jpg"),
-        url("/public/rest1.jpg"),
-        url("/public/spa1.jpg");
+        url("room1.jpg"),
+        url("rest1.jpg"),
+        url("spa1.jpg");
 
     background-repeat: no-repeat;
 
@@ -181,9 +181,9 @@ body::after {
     height: 800px;
 
     background-image:
-        url("/public/pool1.jpg"),
-        url("/public/suite1.jpg"),
-        url("/public/beach.jpg");
+        url("pool1.jpg"),
+        url("suite1.jpg"),
+        url("beach.jpg");
 
     background-repeat: no-repeat;
 
