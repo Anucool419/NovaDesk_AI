@@ -114,7 +114,7 @@ reaction_on_message_received = false
 
 [UI]
 # Name of the assistant.
-custom_css = "public/theme.css"
+custom_css = "/public/theme.css"
 name = "Nova Paradise Hotel"
 
 # default_theme = "light"
