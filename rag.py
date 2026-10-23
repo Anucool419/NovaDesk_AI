@@ -15,12 +15,17 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 os.environ["OPENAI_API_KEY"]=os.getenv("OPENAI_API_KEY")
 
+# 1. Find the directory where rag.py lives
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
+# 2. Build the absolute path to the PDF (assuming it is in the same folder as rag.py)
+pdf_path = os.path.join(current_dir, "Novotel_Hotel_Policies_Mock.pdf")
+csv_path =os.path.join(current_dir, "novotel_hotel_faqs_policy_based.csv")
 
 # 1. Load the unstructured text document
 #loader = TextLoader("novotel_policies.txt")
-loader = PyPDFLoader("Novotel_Hotel_Policies_Mock.pdf")
-csv_loader=CSVLoader("novotel_hotel_faqs_policy_based.csv")
+loader = PyPDFLoader(pdf_path)
+csv_loader=CSVLoader(csv_path)
 pdf_docs = loader.load()
 csv_docs=csv_loader.load()
 all_docs=csv_docs+pdf_docs
