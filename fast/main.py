@@ -342,25 +342,4 @@ def decide_cancellation(
 
     return cancellation
 
-import os
-import sys
-from fastapi import FastAPI
-from chainlit.utils import mount_chainlit
 
-# 1. Calculate the exact path to the project root folder (one level up from /fast)
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# 2. Add both root and fast/ to Python's import path so no imports fail
-sys.path.insert(0, ROOT_DIR)
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-app = FastAPI()
-
-# --- Keep your existing FastAPI routes here ---
-@app.get("/api/status")
-def get_status():
-    return {"status": "FastAPI backend is running"}
-
-# 3. Point Chainlit to the exact absolute location of app.py at the root URL ("/")
-CHAINLIT_TARGET = os.path.join(ROOT_DIR, "app.py")
-mount_chainlit(app=app, target=CHAINLIT_TARGET, path="/")
