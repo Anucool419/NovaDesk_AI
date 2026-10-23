@@ -1,22 +1,25 @@
-body{
-    background:linear-gradient(
+/* =========================================
+   BASE BACKGROUND & TRANSPARENCY
+   ========================================= */
+body {
+    background: linear-gradient(
         180deg,
         #d9f4ff 0%,
         #b8e7ff 50%,
-        #e9f9ff 100% !important;
-    );
-    /* color: #163247 !important; */
-}
-/*------HEADER-------*/
-header{
-    background: transparent !important;
+        #e9f9ff 100%
+    ) !important;
 }
 
-/*---- MAIN CHAT AREA----*/
-#root{
+/* Force Chainlit's internal Material-UI layers to be transparent 
+   so your body gradient and floating images can show through */
+#root, .MuiPaper-root, .MuiBox-root, main {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+#root {
     padding-left: 260px;
     padding-right: 260px;
-    /*color: #163247 !important;*/
 }
 
 /* Center Markdown headings used by the welcome message. */
@@ -25,31 +28,32 @@ header{
     text-align: center;
 }
 
+/* =========================================
+   HEADER & LOGO CENTERING
+   ========================================= */
+/* Target Chainlit's specific Material-UI Toolbar */
+.MuiToolbar-root, header {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 /* Logo image */
 img[alt="logo"] {
     display: block !important;
-    align-self: center;
+    align-self: center !important;
     width: 140px !important;
     height: 140px !important;
-
     max-width: none !important;
     max-height: none !important;
-
     object-fit: contain !important;
-
     border-radius: 50% !important;
-
     margin: 80px auto 16px !important;
-
-    /* Your custom circular background */
-    
-    
     padding: 12px !important;
-
     border: 4px solid white !important;
-
-    box-shadow:
-        0 8px 30px rgba(0, 80, 120, 0.25) !important;
+    box-shadow: 0 8px 30px rgba(0, 80, 120, 0.25) !important;
 }
 
 div:has(img[alt="logo"]) {
@@ -61,6 +65,7 @@ div:has(img[alt="logo"]) {
     box-shadow: none !important;
     border: none !important;
 }
+
 div:has(img[alt="logo"]) p,
 div:has(img[alt="logo"]) h1,
 div:has(img[alt="logo"]) h2,
@@ -75,7 +80,6 @@ div:has(img[alt="logo"]) li {
 /* =========================================
    ASSISTANT / APP RESPONSES
    ========================================= */
-
 [data-step-type="assistant_message"] .message-content,
 [data-step-type="assistant_message"] .message-content p,
 [data-step-type="assistant_message"] .message-content li,
@@ -88,11 +92,9 @@ div:has(img[alt="logo"]) li {
     color: #163247 !important;
 }
 
-
 /* =========================================
    USER MESSAGES
    ========================================= */
-
 [data-step-type="user_message"] .message-content,
 [data-step-type="user_message"] .message-content p,
 [data-step-type="user_message"] .message-content li,
@@ -105,23 +107,18 @@ div:has(img[alt="logo"]) li {
     color: white !important;
 }
 
-
-/* =========================================
-   USER MESSAGE BUBBLE
-   ========================================= */
-
-/* Keep Chainlit's existing bubble/background styling */
 [data-step-type="user_message"] .bg-accent {
     color: white !important;
 }
 
-
+/* =========================================
+   FLOATING IMAGES & ANIMATIONS
+   ========================================= */
 @keyframes fadeUpLeft {
     from {
         opacity: 0;
         transform: translateY(50px) rotate(-4deg);
     }
-
     to {
         opacity: 1;
         transform: translateY(0) rotate(-4deg);
@@ -133,7 +130,6 @@ div:has(img[alt="logo"]) li {
         opacity: 0;
         transform: translateY(50px) rotate(4deg);
     }
-
     to {
         opacity: 1;
         transform: translateY(0) rotate(4deg);
@@ -147,30 +143,23 @@ body::before {
     top: 160px;
     width: 220px;
     height: 800px;
-
     background-image:
         url("room1.jpg"),
         url("rest1.jpg"),
         url("spa1.jpg");
-
     background-repeat: no-repeat;
-
     background-size:
         220px 145px,
         220px 145px,
         220px 145px;
-
     background-position:
         center 0,
         center 50%,
         center 100%;
-
     z-index: 10;
     pointer-events: none;
-
     animation: fadeUpLeft 1.2s ease forwards;
 }
-
 
 body::after {
     content: "";
@@ -179,47 +168,38 @@ body::after {
     top: 160px;
     width: 220px;
     height: 800px;
-
     background-image:
         url("pool1.jpg"),
         url("suite1.jpg"),
         url("beach.jpg");
-
     background-repeat: no-repeat;
-
     background-size:
         220px 145px,
         220px 145px,
         220px 145px;
-
     background-position:
         center 0,
         center 50%,
         center 100%;
-
     z-index: 10;
     pointer-events: none;
-
     animation: fadeUpRight 1.2s ease forwards;
 }
 
-.main{
-    /* background:rgba(180,220,225,0.35);
-    backdrop-filter: 25px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15); */
-    background:linear-gradient(
+/* Replaces the `.main` class targeting to apply to the actual HTML tag */
+main {
+    background: linear-gradient(
         180deg,
-        #d9f4ff 0%,
-        #b8e7ff 50%,
-        #e9f9ff 100%
-    );
+        rgba(217, 244, 255, 0.7) 0%,
+        rgba(184, 231, 255, 0.7) 50%,
+        rgba(233, 249, 255, 0.7) 100%
+    ) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.15) !important;
-
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 12px;
 }
+
 img[alt="room-image"] {
     transform: rotate(-6deg) !important;
     border: 4px solid white !important;
