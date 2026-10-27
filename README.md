@@ -14,7 +14,7 @@ Orchestration Brain (LangGraph): Manages conversation state, memory, guardrails,
 
 Action Execution (FastAPI): Serves as the toolkit for the agent, exposing REST endpoints to interact securely with the SQLite database.
 
- (Note: Add your Excalidraw diagram here)
+## System Architecture
 
  ![Agent Architecture](agent_app.png)
 
@@ -32,9 +32,9 @@ Action Execution (FastAPI): Serves as the toolkit for the agent, exposing REST e
 
 ## 🎥 Live Demo Flow
 
-(Include a GIF or link to your 60-second video demo here)
+[![Watch Demo](images/Screenshot%202026-10-26%20203809.png)](https://youtu.be/RxQ3anUEvoU)
 
-- Guardrail Test: Rejecting off-topic coding requests.
+-  Guardrail Test: Rejecting off-topic coding requests.
 
 -  RAG in Action: Answering multi-part policy questions using Query Rewriting and HyDE.
 
@@ -44,9 +44,14 @@ Action Execution (FastAPI): Serves as the toolkit for the agent, exposing REST e
 
 -  Secure Cancellation: Attempting to cancel a booking triggers the HITL pause, waiting for Admin authorization.
 
+## Booking subgraph
 
 ![Agent Architecture](subgraphs/book_g.png)
+
+## Cancellation subgraph
+
 ![Agent Architecture](subgraphs/cancel_g.png)
+
 ## 🛠️ Tech Stack
 
 - AI & Orchestration: Python, LangChain, LangGraph, OpenAI / Anthropic APIs
