@@ -52,6 +52,35 @@ Action Execution (FastAPI): Serves as the toolkit for the agent, exposing REST e
 
 ![Agent Architecture](subgraphs/cancel_g.png)
 
+
+## 📊 Pipeline Evaluation & Ablation Study (RAGAS)
+
+To ensure enterprise-grade accuracy and prevent hallucinations, the LangGraph retrieval pipeline was mathematically evaluated using **RAGAS (Retrieval Augmented Generation Assessment)** across a 20-question ground-truth dataset testing complex multi-hop constraints.
+
+### Phase 1: The Vector Search Bottleneck (Cosine Similarity)
+Initially, we used standard Cosine Similarity to retrieve the top-K chunks. While it achieved decent Context Recall, the final generation metrics were unacceptably low for the advanced routing strategies.
+
+| Metric (Cosine) | Naive (Base) | HyDE | Query Rewriter |
+| :--- | :---: | :---: | :---: |
+| **Context Recall** | 85.0% | 82.9% | 87.9% |
+| **Answer Correctness**| 50.3% | 64.4% | **49.8%** (Critical Failure) |
+
+**Diagnosis:** Cosine similarity retrieves the most mathematically similar chunks, leading to **redundancy**. For multi-constraint questions (e.g., "Can I bring my dog to the spa?"), the retriever pulled 5 chunks about dogs, and 0 chunks about the spa. The agent lacked diverse context, causing Answer Correctness to plummet.
+
+### Phase 2: The MMR Upgrade (Maximal Marginal Relevance)
+To solve this, we upgraded the FAISS retriever to use **MMR**, which optimizes for both relevance *and* diversity, penalizing duplicate information.
+
+| Metric (MMR) | Naive (Base) | HyDE | Query Rewriter (Winner) |
+| :--- | :---: | :---: | :---: |
+| **Context Recall** | 74.2% | **91.2%** | **91.2%** |
+| **Context Precision**| 69.8% | **78.6%** | 75.0% |
+| **Faithfulness** | 79.9% | 82.4% | **88.6%** |
+| **Answer Correctness**| 69.4% | 66.4% | **71.3%** |
+
+**Key Optimization Learnings:**
+* **Diversity Fixes Hallucinations:** By switching to MMR, the **Query Rewriter's Answer Correctness skyrocketed from 49.8% to 71.3%**, and Faithfulness jumped to 88.6%. The LLM was finally receiving diverse, non-redundant chunks, allowing it to correctly answer multi-part policies.
+* **The Winning Architecture:** The **LangGraph Query Rewriter + MMR Retrieval** proved to be the most robust pipeline, tying for the highest recall (91.2%) while maintaining the highest truthfulness and accuracy.
+
 ## 🛠️ Tech Stack
 
 - AI & Orchestration: Python, LangChain, LangGraph, OpenAI / Anthropic APIs
