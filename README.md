@@ -145,7 +145,7 @@ Start the Chainlit Frontend/Agent:
 In a second terminal, launch the UI:
 
 ```
-chainlit run app.py -w
+chainlit run app.py -w --port 8001
 ```
 
 Open http://localhost:8000 in your browser to start chatting!
