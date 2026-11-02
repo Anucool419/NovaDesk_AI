@@ -114,9 +114,11 @@ reaction_on_message_received = false
 
 [UI]
 # Name of the assistant.
-custom_css = "/public/theme.css"
+#custom_css = "/public/theme.css"
+#name = "Nova Paradise Hotel"
 name = "Nova Paradise Hotel"
-
+custom_css = "public/custom.css"
+default_theme = "light"
 # default_theme = "light"
 
 # Force a specific language for all users (e.g., "en-US", "he-IL", "fr-FR")
