@@ -144,9 +144,9 @@ body::before {
     width: 220px;
     height: 800px;
     background-image:
-        url("room1.jpg"),
-        url("rest1.jpg"),
-        url("spa1.jpg");
+        url("/public/room1.jpg"),
+        url("/public/rest1.jpg"),
+        url("/public/spa1.jpg");
     background-repeat: no-repeat;
     background-size:
         220px 145px,
@@ -169,9 +169,9 @@ body::after {
     width: 220px;
     height: 800px;
     background-image:
-        url("pool1.jpg"),
-        url("suite1.jpg"),
-        url("beach.jpg");
+        url("/public/pool1.jpg"),
+        url("/public/suite1.jpg"),
+        url("/public/beach.jpg");
     background-repeat: no-repeat;
     background-size:
         220px 145px,
