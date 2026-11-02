@@ -95,6 +95,7 @@ div:has(img[alt="logo"]) li {
 /* =========================================
    USER MESSAGES
    ========================================= */
+/*
 [data-step-type="user_message"] .message-content,
 [data-step-type="user_message"] .message-content p,
 [data-step-type="user_message"] .message-content li,
@@ -108,9 +109,31 @@ div:has(img[alt="logo"]) li {
 }
 
 [data-step-type="user_message"] .bg-accent {
+   color: white !important;
+}
+*/
+/* 1. Apply the dark background to the main bubble wrapper */
+[data-step-type="user_message"] .message-content {
+    background-color: #212121 !important;
     color: white !important;
 }
 
+/* 2. Make inner text elements transparent so the dark bubble shows through */
+[data-step-type="user_message"] .message-content p,
+[data-step-type="user_message"] .message-content li,
+[data-step-type="user_message"] .message-content strong,
+[data-step-type="user_message"] .message-content em,
+[data-step-type="user_message"] .message-content h1,
+[data-step-type="user_message"] .message-content h2,
+[data-step-type="user_message"] .message-content h3,
+[data-step-type="user_message"] .message-content h4 {
+    color: white !important;
+    background-color: transparent !important;
+}
+
+[data-step-type="user_message"] .bg-accent {
+    color: white !important;
+}
 /* =========================================
    FLOATING IMAGES & ANIMATIONS
    ========================================= */
