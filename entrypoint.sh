@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# To ensure css is rendered
+cp -r .chainlit /home/site/wwwroot/
 # 1. Activate Azure's virtual environment
 source /tmp/*df28*/antenv/bin/activate 2>/dev/null || source antenv/bin/activate 2>/dev/null
 
