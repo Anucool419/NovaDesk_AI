@@ -112,13 +112,19 @@ div:has(img[alt="logo"]) li {
    color: white !important;
 }
 */
-/* 1. Apply the dark background to the main bubble wrapper */
-[data-step-type="user_message"] .message-content {
+/* 1. Apply the dark background to the outer rounded bubble */
+[data-step-type="user_message"] .MuiPaper-root {
     background-color: #212121 !important;
     color: white !important;
 }
 
-/* 2. Make inner text elements transparent so the dark bubble shows through */
+/* 2. Make the inner wrapper transparent to remove the sharp box */
+[data-step-type="user_message"] .message-content {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+/* 3. Ensure all nested text elements remain transparent with white text */
 [data-step-type="user_message"] .message-content p,
 [data-step-type="user_message"] .message-content li,
 [data-step-type="user_message"] .message-content strong,
@@ -134,6 +140,7 @@ div:has(img[alt="logo"]) li {
 [data-step-type="user_message"] .bg-accent {
     color: white !important;
 }
+
 /* =========================================
    FLOATING IMAGES & ANIMATIONS
    ========================================= */
