@@ -120,7 +120,10 @@ name = "Nova Paradise Hotel"
 custom_css = "public/custom.css"
 default_theme = "light"
 # default_theme = "light"
-
+[UI.theme.light.primary]
+main = "#212121"
+dark = "#141414"
+light = "#4d4d4d"
 # Force a specific language for all users (e.g., "en-US", "he-IL", "fr-FR")
 # If not set, the browser's language will be used
 # language = "en-US"
