@@ -162,6 +162,6 @@ Open http://localhost:8000 in your browser to start chatting!
 
 ## 🤝 Let's Connect
 
-I'm documenting the build process and architectural decisions of this project on my DEV Community blog, AI Foundry.
+I'm documenting the build process and architectural decisions of this project on my DEV Community blog.
 
 [Read my deep-dive articles here](https://dev.to/zeroshotanu/) | Connect on LinkedIn [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/ananya-s-6b300527a/)
